@@ -1,0 +1,102 @@
+<html>
+
+<head>
+
+<link rel="Stylesheet" href = "/TipCalculator.css">
+
+</head>
+
+<h1>Tip Calculator</h1>
+<label>Bill Amount</label>
+<input id="billAmount" placeholder = "$" type="text"> <br>
+<label>Number of Guests</label>
+<input id = "guests" placeholder = "Number of Guests" type="text"> <br>
+
+<label>Rating</label>
+
+<div class="stars">
+
+<a>⭐</a>
+<a>⭐</a>
+<a>⭐</a>
+<a>⭐</a>
+<a>⭐</a>
+
+
+</div>
+
+<div id = "container1">
+</div>
+
+<input id ="submit" type="submit">
+
+
+<script>
+
+var billAmount = document.getElementById("billAmount");
+
+var guests = document.getElementById("guests");
+
+var submit = document.getElementById("submit");
+
+
+
+
+const starWrapper = document.querySelector(".stars")
+const stars = document.querySelectorAll(".stars a");
+
+
+stars.forEach((star, clickedIdx) => {
+star.addEventListener("click", () => {
+starWrapper.classList.add("disabled");
+  stars.forEach((otherStar, otherIdx) => {
+    if (otherIdx <= clickedIdx) {
+      otherStar.classList.add("active");
+    }
+  });
+
+  let text = document.createElement('h3');
+  text.innerHTML = `You gave us a ${clickedIdx +1} star rating`;
+  container1.appendChild(text);
+
+  var gueststip;
+  if (guests.value >= 10) {
+
+    gueststip = (billAmount.value)*(0.1);
+
+  } else {
+    gueststip = 0;
+
+  }
+
+  function gratuity(){
+    return Number((billAmount.value)) + Number((clickedIdx+1)*(billAmount.value)*(.05)) + Number(gueststip);
+  }
+  submit.addEventListener("click", function() {
+
+
+    let text2 = document.createElement('h1')
+    text2.innerHTML = `Your total, including gratutity is: $${gratuity()}.`
+    container1.appendChild(text2);
+
+
+
+});
+
+
+  });
+
+
+ 
+
+});
+  
+
+
+
+
+
+
+</script>
+</html>
+
