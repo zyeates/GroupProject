@@ -30,6 +30,12 @@
 
 <input id ="submit" type="submit">
 
+<h3>Calculator Rules</h3>
+<p>1. Baseline tip percentage is 15%. </p>
+<p>2. Every star in your overall rating is an extra 5% tip.  </p>
+<p>3. If more than 10 guests, an extra 10% tip will be added to total bill amount. </p>
+
+
 
 <script>
 
@@ -70,7 +76,7 @@ starWrapper.classList.add("disabled");
   }
 
   function gratuity(){
-    return Number((billAmount.value)) + Number((clickedIdx+1)*(billAmount.value)*(.05)) + Number(gueststip);
+    return Number((billAmount.value)*(.15)) + Number((clickedIdx+1)*(billAmount.value)*(.05)) + Number(gueststip);
   }
   submit.addEventListener("click", function() {
 
