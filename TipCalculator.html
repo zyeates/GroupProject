@@ -1,0 +1,118 @@
+<html>
+
+<head>
+
+<link rel="Stylesheet" href = "/TipCalculator.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<div id="parentContainer">
+
+<h1> * Tip Calculator:</h1>
+<label>Bill Amount:</label>
+<input id="billAmount" placeholder = "$" type="text"> <br> <br>
+<label>Number of Guests:</label>
+<input id = "guests" placeholder = "Number of Guests" type="text"> <br> <br>
+
+<label>Rate Your Experience:</label>
+<br><br>
+<div class="stars">
+
+<a>⭐</a>
+<a>⭐</a>
+<a>⭐</a>
+<a>⭐</a>
+<a>⭐</a>
+
+
+</div>
+
+<div id = "container1">
+</div>
+<div id = "container2">
+</div>
+<br>
+<input id ="submit" type="submit">
+
+<h3>Calculator Rules</h3>
+<p>1. Baseline tip percentage is 15%. </p>
+<p>2. Every star in your overall rating is an extra 1% tip.  </p>
+<p>3. If more than 10 guests, an extra 5% tip will be added to total bill amount. </p>
+
+</div>
+
+<script>
+
+var billAmount = document.getElementById("billAmount");
+
+var guests = document.getElementById("guests");
+
+var submit = document.getElementById("submit");
+
+
+
+
+const starWrapper = document.querySelector(".stars")
+const stars = document.querySelectorAll(".stars a");
+
+
+stars.forEach((star, clickedIdx) => {
+star.addEventListener("click", () => {
+starWrapper.classList.add("disabled");
+  stars.forEach((otherStar, otherIdx) => {
+    if (otherIdx <= clickedIdx) {
+      otherStar.classList.add("active");
+    }
+  });
+
+  let text = document.createElement('h3');
+  text.innerHTML = `You gave us a ${clickedIdx +1} star rating`;
+  container1.appendChild(text);
+
+  var gueststip;
+  if (guests.value >= 10) {
+
+    gueststip = (billAmount.value)*(0.05);
+
+  } else {
+    gueststip = 0;
+
+  }
+
+  function gratuity(){
+    return Number(billAmount.value) + Number((billAmount.value)*(.15)) + Number((clickedIdx+1)*(billAmount.value)*(.01)) + Number(gueststip);
+  }
+  submit.addEventListener("click", function() {
+
+
+    let text2 = document.createElement('h1')
+    text2.innerHTML = `Your total, including gratutity is: $${gratuity()}.`
+    container2.appendChild(text2);
+    document.getElementById("submit").disabled = true;
+
+
+
+});
+
+
+  });
+
+
+ 
+
+});
+  
+
+
+
+
+
+
+</script>
+</html>
+
