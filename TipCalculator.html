@@ -3,17 +3,22 @@
 <head>
 
 <link rel="Stylesheet" href = "/TipCalculator.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
 </head>
 
-<h1>Tip Calculator</h1>
-<label>Bill Amount</label>
-<input id="billAmount" placeholder = "$" type="text"> <br>
-<label>Number of Guests</label>
-<input id = "guests" placeholder = "Number of Guests" type="text"> <br>
+<div id="parentContainer">
+
+<h1> * Tip Calculator:</h1>
+<label>Bill Amount:</label>
+<input id="billAmount" placeholder = "$" type="text"> <br> <br>
+<label>Number of Guests:</label>
+<input id = "guests" placeholder = "Number of Guests" type="text"> <br> <br>
 
 <label>Rating</label>
-
+<br><br>
 <div class="stars">
 
 <a>⭐</a>
@@ -27,7 +32,9 @@
 
 <div id = "container1">
 </div>
-
+<div id = "container2">
+</div>
+<br>
 <input id ="submit" type="submit">
 
 <h3>Calculator Rules</h3>
@@ -35,7 +42,7 @@
 <p>2. Every star in your overall rating is an extra 1% tip.  </p>
 <p>3. If more than 10 guests, an extra 5% tip will be added to total bill amount. </p>
 
-
+</div>
 
 <script>
 
@@ -83,7 +90,7 @@ starWrapper.classList.add("disabled");
 
     let text2 = document.createElement('h1')
     text2.innerHTML = `Your total, including gratutity is: $${gratuity()}.`
-    container1.appendChild(text2);
+    container2.appendChild(text2);
 
 
 
