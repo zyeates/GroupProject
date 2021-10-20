@@ -68,7 +68,7 @@ starWrapper.classList.add("disabled");
   var gueststip;
   if (guests.value >= 10) {
 
-    gueststip = (billAmount.value)*(0.1);
+    gueststip = (billAmount.value)*(0.05);
 
   } else {
     gueststip = 0;
@@ -76,7 +76,7 @@ starWrapper.classList.add("disabled");
   }
 
   function gratuity(){
-    return Number((billAmount.value)*(.15)) + Number((clickedIdx+1)*(billAmount.value)*(.05)) + Number(gueststip);
+    return Number(billAmount.value) + Number((billAmount.value)*(.15)) + Number((clickedIdx+1)*(billAmount.value)*(.01)) + Number(gueststip);
   }
   submit.addEventListener("click", function() {
 
