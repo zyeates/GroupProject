@@ -19,7 +19,7 @@
 <label>Number of Guests:</label>
 <input id = "guests" placeholder = "Number of Guests" type="text"> <br> <br>
 
-<label>Rating</label>
+<label>Rate Your Experience:</label>
 <br><br>
 <div class="stars">
 
@@ -93,6 +93,7 @@ starWrapper.classList.add("disabled");
     let text2 = document.createElement('h1')
     text2.innerHTML = `Your total, including gratutity is: $${gratuity()}.`
     container2.appendChild(text2);
+    document.getElementById("submit").disabled = true;
 
 
 
