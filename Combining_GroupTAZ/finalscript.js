@@ -8,15 +8,14 @@ function addItem () {
 
     
     //checking if the user inputted one of the available toppings (not yet 100% functional)
-    let itemList = document.getElementsByClassName("list-item");
-    let str = [].map.call(itemList, function(node){
-        return node.innerText;
-    }).join("");
+    const itemList = document.getElementsByClassName("list-item");
+    const str = whatyoutyped.toString();
     console.log(str); //to see output for debugging
 
-    const contents = ["Cheese", "Caramelized Onion", "Spicy Ketchup", "Dill Pickle Chips", "Bread & Butter Chips", "Tomato", "Lettuce", "Arugula", "Red Onion", "Mustard", "Mayo"]
+    const contents = ["Cheese", "Caramelized Onion", "Spicy Ketchup", "Dill Pickle Chips", "Bread & Butter Chips", "Tomato", "Lettuce", "Arugula", "Red Onion", "Mustard", "Mayo"];
     
-    if (str.includes(contents)) {
+    if (contents.includes(str)) {
+
     document.getElementById("ul").appendChild(newItem); //adding new li onto end of list
     document.getElementById("inputboxtext").value = '';  //resetting placeholder value of input text box
     
@@ -90,7 +89,7 @@ starWrapper.classList.add("disabled");
 
 
     let text2 = document.createElement('h1')
-    text2.innerHTML = `Your total, including gratutity is: $${gratuity()}.`
+    text2.innerHTML = `Your total, including gratutity is: $${gratuity().toFixed(2)}.`
     container2.appendChild(text2);
     document.getElementById("submit").disabled = true;
 
