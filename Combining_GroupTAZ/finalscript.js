@@ -8,7 +8,7 @@ function addItem () {
 
     
     //checking if the user inputted one of the available toppings (not yet 100% functional)
-    const itemList = document.getElementsByClassName("list-item");
+    
     const str = whatyoutyped.toString();
     console.log(str); //to see output for debugging
 
