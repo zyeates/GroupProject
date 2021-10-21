@@ -1,18 +1,22 @@
 // If you click the Add button, it will add what you typed to the list
+function addItem () {
 
     let whatyoutyped = document.getElementById("inputboxtext").value;  //getting value of input typed
     let newItem = document.createElement('li');  //creating new li element to add
     newItem.innerHTML = whatyoutyped;   //putting input text into the new li
     newItem.className = "list-item";    //adding a class for easy selection
 
+    
     //checking if the user inputted one of the available toppings (not yet 100% functional)
     let itemList = document.getElementsByClassName("list-item");
     let str = [].map.call(itemList, function(node){
-        return node.innerHTML;
+        return node.innerText;
     }).join("");
     console.log(str); //to see output for debugging
 
-    if (str.includes('Cheese') !== false || str.includes('Caramelized Onion') == !false || str.includes('Spicy Ketchup') !== false || str.includes('Dill Pickle Chips') !== false || str.includes('Bread & Butter Chips') !== false || str.includes('Tomato') !== false || str.includes('Lettuce') !== false || str.includes('Arugula') !== false || str.includes('Red Onion') !== false || str.includes('Mustard') !== false || str.includes('Mayo') !== false) {
+    const contents = ["Cheese", "Caramelized Onion", "Spicy Ketchup", "Dill Pickle Chips", "Bread & Butter Chips", "Tomato", "Lettuce", "Arugula", "Red Onion", "Mustard", "Mayo"]
+    
+    if (str.includes(contents)) {
     document.getElementById("ul").appendChild(newItem); //adding new li onto end of list
     document.getElementById("inputboxtext").value = '';  //resetting placeholder value of input text box
     
@@ -39,7 +43,7 @@
     alert("Hey, that's not a topping we have!");
   };
 
-
+}
 
 
 //Zeno's JS//
