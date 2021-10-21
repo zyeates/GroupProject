@@ -1,5 +1,5 @@
 // If you click the Add button, it will add what you typed to the list
-function addItem() {
+
     let whatyoutyped = document.getElementById("inputboxtext").value;  //getting value of input typed
     let newItem = document.createElement('li');  //creating new li element to add
     newItem.innerHTML = whatyoutyped;   //putting input text into the new li
@@ -11,10 +11,12 @@ function addItem() {
         return node.innerHTML;
     }).join("");
     console.log(str); //to see output for debugging
-    if (str.search('Cheese' !== false || str.search('Caramelized Onion') !== false || str.search('Spicy Ketchup') !== false || str.search('Dill Pickle Chips') !== false || str.search('Bread & Butter Chips') !== false || str.search('Tomato') !== false || str.search('Lettuce') !== false || str.search('Arugula') !== false || str.search('Red Onion') !== false || str.search('Mustard') !== false || str.search('Mayo') !== false)) {
+
+    if (str.includes('Cheese') !== false || str.includes('Caramelized Onion') == !false || str.includes('Spicy Ketchup') !== false || str.includes('Dill Pickle Chips') !== false || str.includes('Bread & Butter Chips') !== false || str.includes('Tomato') !== false || str.includes('Lettuce') !== false || str.includes('Arugula') !== false || str.includes('Red Onion') !== false || str.includes('Mustard') !== false || str.includes('Mayo') !== false) {
     document.getElementById("ul").appendChild(newItem); //adding new li onto end of list
     document.getElementById("inputboxtext").value = '';  //resetting placeholder value of input text box
     
+
 
     function crossOutItem(item){
         document.getElementById('ul').removeChild(item);
@@ -33,12 +35,11 @@ function addItem() {
         setTimeout(() => {removeItem(newItem)}, 1000);
     });
     
+  } else {
+    alert("Hey, that's not a topping we have!");
+  };
 
-}
-else {alert("Hey, that's not a topping we have!");
-};
 
-};
 
 
 //Zeno's JS//
