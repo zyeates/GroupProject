@@ -1,0 +1,105 @@
+#grad {
+    background-image: linear-gradient(rgb(240, 233, 233), rgb(63, 50, 68)) !important;
+}
+  
+nav {
+    background-color: #795548 !important;
+}
+
+ul li {
+    cursor: pointer;
+    /* make list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Darker background-color on hover */
+  ul li:hover {
+      background: #ddd;
+    }
+  
+  /* When clicked on, strike out text */
+  ul li.doubled {
+    font-weight: 700;
+    }
+
+/* When double clicked, strike out text */
+ul li.checked {
+    text-decoration: line-through;
+    }
+  
+  /*When you hover over the add button, it changes color */
+  .addbutton:hover {
+      background-color: rgb(58, 12, 12);
+    }
+
+/*Zeno's CSS Formatting */
+    .stars {
+        display: flex;
+        
+        }
+        
+        .stars.disabled {
+        pointer-events:none;
+        }
+        
+        
+        .stars a {
+        
+        opacity: 50%;
+        cursor: pointer;
+        padding:3px;
+        
+        }
+        
+        .stars:hover a {
+            opacity: 100%
+        
+        }
+        
+        .stars a:hover {
+        opacity: 100%;
+        
+        }
+        
+        .stars a:hover ~ a {
+        opacity: 50%;
+        
+        }
+        
+        #parentContainer {
+            border-style: solid;
+            border-width: 5px;
+            border-color: black;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            width: 400px;
+            margin: 0 auto;
+        }
+        
+        #container1 {
+        
+        }
+        
+        #container2 {
+         color: red;
+        
+        }
+        
+        input[type=submit] {
+        
+            background-color: #d8d8d5;
+            font-size: larger;
+            font-weight:bolder;
+            border-style: solid;
+            border-width: 3px;
+            border-color: black;
+            color: rgb(3, 3, 3);
+            padding: 9px 15px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        
+        }

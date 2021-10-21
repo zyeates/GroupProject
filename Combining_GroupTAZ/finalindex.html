@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<head>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="finalstyle.css">
+
+
+    <title>Make Your Own Burgers</title>
+
+</head>
+
+<body id="grad">
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Customize Your Burger</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#">Ordering</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Feedback</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="parallax-container">
+        <div class="parallax"><img
+                src="https://images.unsplash.com/photo-1585238341267-1cfec2046a55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=574&q=80"
+                style="transform: translate3d(-50%, 432.451px, 200px);opacity: 0.75;">></div>
+    </div>
+
+    <div id="div1" class="header" id="grad">
+        <h2 style="text-align: center">Topping Selector</h2>
+        <br>
+        <p id="intructions" style="text-align: center">Type in a topping from the list to add it. Click to double your
+            topping ($1 extra). Double click to remove your topping.</p>
+        <br>
+        <p>Toppings: Cheese, Caramelized Onion, Spicy Ketchup, Dill Pickle Chips, Bread & Butter Chips, Tomato, Lettuce,
+            Arugula, Red Onion, Mustard, Mayo</p>
+
+        <!-- Input Box to add item to form -->
+        <input type="text" id="inputboxtext" placeholder="Enter item..">
+
+        <!-- Button to add item to form -->
+        <button id="addbutton" type="button" onclick="addItem()">Add</button>
+    </div>
+
+    <!-- To Do List -->
+
+    <ul id="ul">
+
+    </ul>
+
+    <br>
+    <br>
+
+    <!-- Zeno's Tip Calculator -->
+
+    <div id="parentContainer">
+
+        <h1> * Tip Calculator:</h1>
+        <label>Bill Amount:</label>
+        <input id="billAmount" placeholder="$" type="text"> <br> <br>
+        <label>Number of Guests:</label>
+        <input id="guests" placeholder="Number of Guests" type="text"> <br> <br>
+
+        <label>Rate Your Experience:</label>
+        <br><br>
+        <div class="stars">
+
+            <a>⭐</a>
+            <a>⭐</a>
+            <a>⭐</a>
+            <a>⭐</a>
+            <a>⭐</a>
+
+
+        </div>
+
+        <div id="container1">
+        </div>
+        <div id="container2">
+        </div>
+        <br>
+        <input id="submit" type="submit">
+
+        <h3>Calculator Rules</h3>
+        <p>1. Baseline tip percentage is 15%. </p>
+        <p>2. Every star in your overall rating is an extra 1% tip. </p>
+        <p>3. If more than 10 guests, an extra 5% tip will be added to total bill amount. </p>
+
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- JavaScript-->
+    <script src="finalscript.js"></script>
+
+</body>
+
+</html>
